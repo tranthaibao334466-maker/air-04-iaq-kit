@@ -1,0 +1,13 @@
+# Word reports stay on the local machine only
+*.docx
+*.doc
+*.dotx
+
+# Office lock / temp files (created while a document is open)
+~$*
+*.tmp
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
