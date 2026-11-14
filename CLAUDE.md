@@ -9,6 +9,7 @@ Design a STEM learning kit for indoor air quality (lower and upper secondary stu
 ## Directory layout
 ```
 iaq/
+├─ .gitignore              # ignores *.docx and Office temp files
 ├─ CLAUDE.md
 ├─ project-idea.md          # READ-ONLY for Claude: only the user edits it
 ├─ nhat-ky-ky-thuat.docx    # team engineering log (Word), see "Engineering log"
@@ -59,10 +60,19 @@ iaq/
 - Never present readings or findings as a medical diagnosis.
 
 ## Environment
-- Windows 11. Shells: PowerShell (primary) and Git Bash. Python is not installed. Analysis tools are not chosen yet: propose one and ask before using any.
+- Windows 11. Shells: PowerShell (primary) and Git Bash.
+- Python 3.14 is available through the `py` launcher. The `python` command is a Microsoft Store alias and fails. No extra packages are installed (for example `defusedxml` is missing), and installing is not allowed. If a script needs a missing package, say so and use another way (Node.js is available).
+- Analysis tools are not chosen yet: propose one and ask before using any.
 - Allowed: reading and listing files; building or compiling code and running scripts.
 - Not allowed: installing software or libraries; flashing or uploading firmware to devices.
-- No git: do not run git commands.
+
+## Git and GitHub
+- Repo: `tranthaibao334466-maker/air-04-iaq-kit` (**public**), branch `main`, remote `origin`.
+- Only text files go to GitHub. `.docx` reports stay local through `.gitignore`. Never force-add them and never remove that rule.
+- Read-only git commands (`status`, `log`, `diff`) are allowed.
+- Run `git commit` or `git push` only when the user asks. Never force-push, rewrite history or create or delete branches.
+- The repo is public. Before any commit, check that the staged files contain no personal data: no names, student IDs or emails of team members, students or parents, and no non-de-identified survey data. If any is found, stop and ask.
+- End commit messages with: `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
 
 ## Working with files
 - New files: create them freely and tell the user the path.
@@ -79,7 +89,8 @@ End every document you create with these three sections:
 ## Hard rules
 - Never delete files, including files you created.
 - Never use paid services or paid APIs.
-- Never send content outside: no email, posting or sharing files.
+- Never send content outside: no email, posting or sharing files. The only exception is `git push` to `origin` when the user asks.
 - Never read non-de-identified personal data.
 - Never edit `project-idea.md`.
-- Never install software, flash devices or run git.
+- Never install software or flash devices.
+- Never commit or push unless the user asks.
